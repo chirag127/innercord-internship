@@ -1,40 +1,25 @@
-# AscendOps-Data-Engineering-Python-Portfolio
+# InnerCord Internship Report
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![GitHub stars](https://img.shields.io/github/stars/chirag127/innercord-internship?style=flat-square)](https://github.com/chirag127/innercord-internship)
+[![License](https://img.shields.io/github/license/chirag127/innercord-internship?style=flat-square)](LICENSE)
+[![GH Pages](https://img.shields.io/badge/site-live-brightgreen?style=flat-square)](https://chirag127.github.io/innercord-internship/)
 
-A professional data engineering portfolio showcasing a modular architecture and the use of Python and Pandas. This repository contains documentation and reports from a data engineering internship, demonstrating practical skills and experience in the field.
+Internship documentation and project report from InnerCord.
 
-## Architecture
+## Live Site
 
-The repository is structured to maintain a clean root directory, with all documentation and reports located in the `docs/` directory. The `.github/` directory contains templates and workflows for CI/CD and community health.
+**https://chirag127.github.io/innercord-internship/**
 
-```
-.
-├── .github
-│   ├── ISSUE_TEMPLATE
-│   │   └── bug_report.md
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── workflows
-│       └── ci.yml
-├── AGENTS.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── PROPOSED_README.md
-├── SECURITY.md
-└── docs
-    └── internship
-        ├── ...
-```
+## Contents
 
-## Quickstart
+| File | Description |
+|------|-------------|
+| `docs/internship/report.pdf` | Final internship report |
+| `docs/internship/Internship at InnerCord (2).pdf` | Internship certificate/documentation |
+| `docs/internship/Internship at InnerCord (3).pptx` | Presentation |
+| `docs/internship/archive/Project-report.md` | Project report (Markdown) |
+| `docs/internship/archive/Project-report.pdf` | Project report (PDF) |
 
-This repository is for demonstration and documentation purposes. To explore the contents, clone the repository and navigate the `docs/` directory.
+## License
 
-```bash
-git clone https://github.com/chirag127/AscendOps-Data-Engineering-Python-Portfolio.git
-cd AscendOps-Data-Engineering-Python-Portfolio
-ls -R docs
-```
+MIT
