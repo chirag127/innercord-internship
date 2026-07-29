@@ -2,13 +2,13 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/chirag127/innercord-internship?style=flat-square)](https://github.com/chirag127/innercord-internship)
 [![License](https://img.shields.io/github/license/chirag127/innercord-internship?style=flat-square)](LICENSE)
-[![GH Pages](https://img.shields.io/badge/site-live-brightgreen?style=flat-square)](https://chirag127.github.io/innercord-internship/)
+[![GH Pages](https://img.shields.io/badge/site-live-brightgreen?style=flat-square)](https://innercord-internship.oriz.in)
 
-Internship documentation and project report from InnerCord.
+Internship documentation and project report from InnerCord — PDF report, presentation, and markdown notes.
 
 ## Live Site
 
-**https://chirag127.github.io/innercord-internship/**
+**https://innercord-internship.oriz.in**
 
 ## Contents
 
