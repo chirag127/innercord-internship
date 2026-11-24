@@ -6,10 +6,49 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Verify docs exist
-        run: test -d docs
+      - name: Validate published documentation links and PDF files
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+
+          root = Path('docs').resolve()
+          index = root / 'index.html'
+          assert index.is_file(), 'Missing documentation entry point'
+
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs = []
+
+              def handle_starttag(self, tag, attrs):
+                  if tag == 'a':
+                      self.hrefs.extend(value for key, value in attrs if key == 'href' and value)
+
+          parser = Links()
+          parser.feed(index.read_text(encoding='utf-8'))
+          checked = 0
+          for href in parser.hrefs:
+              url = urlsplit(href)
+              if url.scheme or url.netloc or not url.path:
+                  continue
+              path = (root / unquote(url.path).lstrip('/')).resolve()
+              assert path.is_relative_to(root), f'Link escapes published docs: {href}'
+              assert path.is_file(), f'Broken documentation link: {href}'
+              assert path.stat().st_size > 0, f'Empty documentation file: {href}'
+              if path.suffix.lower() == '.pdf':
+                  with path.open('rb') as document:
+                      assert document.read(5) == b'%PDF-', f'Invalid PDF: {href}'
+              checked += 1
+          assert checked > 0, 'No local documentation links were validated'
+          print(f'Validated {checked} local documentation links')
+          PY
